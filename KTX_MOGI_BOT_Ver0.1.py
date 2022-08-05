@@ -7,6 +7,7 @@ from selenium import webdriver
 import time
 import requests
 from bs4 import BeautifulSoup
+from random import *
 
 import telegram
 telgm_token = '5523286949:AAH-dLh7miR9gU9aMrGUZHOOLiuRlWHm0q4'
@@ -28,8 +29,12 @@ print ('[1:서울-강릉(8/6), 2:청량리-강릉(8/6), 3:강릉-서울(8/7), 4:
 travel_preset = input('여정 프리셋 : ')
 
 ## 내 아이디로 미리 설정
-member_num = '1040132735'
-password = 'wlgid!9286'
+## 지향이 아이디
+# member_num = '1040132735'
+# password = 'wlgid!9286'
+# 정목 아이디
+member_num = '0960000414'
+password = 'dbwjdahr11!'
 
 ## 예매 정보 입력 (수동)
 # start = '서울'
@@ -73,7 +78,7 @@ else :
     year = input('년도 입력 (Ex.2022): ')
     month = input('월 입력 (1~12): ')
     day = input('일 입력 (1~31): ')
-    hous = input('출발시간 입력 (0~23): ') #0~23 사이로 입력#
+    hours = input('출발시간 입력 (0~23): ') #0~23 사이로 입력#
 
 print("출발지 : " + start)
 print("도착지 : " + end)
@@ -135,7 +140,7 @@ progress = 0        ##초기 진입 : 0, 예약하기 완료시 : 1
 refresh_but="/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[3]/p/a/img" ## refresh button
 
 while progress==0:
-    driver.implicitly_wait(3)
+    driver.implicitly_wait(uniform(1.0,2.0))
     try:
         #예약하기 or 입석+좌석 등.. 하이퍼링크가 살아있는경우
         res_but = "/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[4]/table[1]/tbody/tr[1]/td[6]/a[1]/img"
@@ -165,4 +170,4 @@ while progress==0:
             driver.find_element_by_xpath(refresh_but).click()
         except:
             pass
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(uniform(2.0,4.0))
