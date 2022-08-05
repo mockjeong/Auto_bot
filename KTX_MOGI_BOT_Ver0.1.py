@@ -140,7 +140,7 @@ progress = 0        ##초기 진입 : 0, 예약하기 완료시 : 1
 refresh_but="/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[3]/p/a/img" ## refresh button
 
 while progress==0:
-    driver.implicitly_wait(uniform(1.0,2.0))
+    driver.implicitly_wait(1)
     try:
         #예약하기 or 입석+좌석 등.. 하이퍼링크가 살아있는경우
         res_but = "/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[4]/table[1]/tbody/tr[1]/td[6]/a[1]/img"
@@ -170,4 +170,4 @@ while progress==0:
             driver.find_element_by_xpath(refresh_but).click()
         except:
             pass
-    driver.implicitly_wait(uniform(2.0,4.0))
+    time.sleep(uniform(1.0,2.0))
