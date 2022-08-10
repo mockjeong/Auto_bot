@@ -162,6 +162,7 @@ while progress==0:
             driver.implicitly_wait(3)
             tele_bot.sendMessage(chat_id = '5559539231', text="KTX 예약화면을 확인하세요..!!")
             progress = 1
+            print("예매를 성공했습니다.")
         except:
             pass
         break
