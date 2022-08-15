@@ -8,6 +8,11 @@ import urllib.request
 month = {'Jan':'01', 'Feb':'02', 'Mar':'03', 'Apr':'04', 'May':'05', 'Jun':'06', 
     'Jul':'07', 'Aug':'08', 'Sep':'09', 'Oct':'10', 'Nov':'11', 'Dec':'12'}
 
+    
+## 로그인 ID/PW 기록 (일단 내 아이디)
+login_id = input('서울시공공예약 번호 입력 : ')
+login_pw = input('비밀 번호 입력 : ')
+
 ## Chrome Driver 경로 지정
 driverPath = r"chromedriver.exe" 
 options = webdriver.ChromeOptions()
@@ -15,10 +20,6 @@ options.add_experimental_option("excludeSwitches", ["enable-logging"])
 driver = webdriver.Chrome(driverPath, options=options)
 driver.set_window_size(1920, 1080)
 driver.implicitly_wait(4)
-
-## 로그인 ID/PW 기록 (일단 내 아이디)
-login_id = 'jeongmock'
-login_pw = 'dbwjdahr11!'
 
 ## 서울시 공공예약 사이트 접속
 driver.get('https://yeyak.seoul.go.kr/web/main.do') 
