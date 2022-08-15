@@ -3,9 +3,12 @@
 import warnings
 warnings.filterwarnings(action='ignore')
 
+import selenium
 from selenium import webdriver
 import time
 import requests
+import bs4
+import random
 from bs4 import BeautifulSoup
 from random import *
 
@@ -84,7 +87,7 @@ print("일  시 : " + year +"년 " + month + "월 " + day + "일 " + hours + "�
 print("위의 정보로 예매를 시작합니다.")
 
 ## Chrome Driver 경로 지정
-driverPath = r"C:/Chromedriver/chromedriver.exe" 
+driverPath = r"chromedriver.exe" 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 driver = webdriver.Chrome(driverPath, options=options) 
