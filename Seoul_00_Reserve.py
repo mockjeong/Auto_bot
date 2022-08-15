@@ -23,32 +23,32 @@ driver.implicitly_wait(4)
 
 ## 서울시 공공예약 사이트 접속
 driver.get('https://yeyak.seoul.go.kr/web/main.do') 
-time.sleep(1)
+driver.implicitly_wait(10)
 
 ##로그인 버튼 클릭
 driver.find_element("xpath","/html/body/div/header/div[1]/div/div[1]/a").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 #ID/PW 입력 및 로그인
 driver.find_element("name",'userid').send_keys(login_id)
 driver.find_element("name",'userpwd').send_keys(login_pw)
 driver.find_element("xpath","/html/body/div/div[3]/div[2]/div/div/div/div[1]/form/div[1]/button").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 ##공간 시설 클릭
 driver.find_element("xpath","/html/body/div[1]/header/div[2]/div[2]/nav/div/ul/li[2]/a/span").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 ##캠핑장 클릭
 driver.find_element("xpath","/html/body/div[1]/div[3]/div[2]/div/div[1]/div/a[2]").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 #ID/PW 입력 및 로그인
 driver.find_element("name",'sch_text').send_keys('9월 난지 12')
 driver.find_element("xpath","/html/body/div[1]/div[3]/div[2]/div/div[2]/form/fieldset/button[1]").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 ##첫 번째 검색 결과 클릭
 driver.find_element("xpath","/html/body/div[1]/div[3]/div[2]/div/div[3]/ul/li/a/div[2]/h4").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 ##팝업 닫기 클릭
 driver.find_element("xpath","/html/body/div/div[3]/div[2]/div/div[1]/div/div[2]/button/span").click()
-time.sleep(1)
+driver.implicitly_wait(10)
 
 target_mon = 8
 target_day = 16
