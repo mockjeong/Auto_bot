@@ -9,9 +9,12 @@ import urllib.request
 month = {'Jan':'01', 'Feb':'02', 'Mar':'03', 'Apr':'04', 'May':'05', 'Jun':'06', 
     'Jul':'07', 'Aug':'08', 'Sep':'09', 'Oct':'10', 'Nov':'11', 'Dec':'12'}
 
-## 로그인 ID/PW 기록 (일단 내 아이디)
-login_id = 'neck975'
-login_pw = 'wjdahr11'
+## 로그인 ID/PW 기록 (혜원 아이디)
+# login_id = 'neck975'
+# login_pw = 'wjdahr11'
+login_id = 'hyewon00315'
+login_pw = 'zhel1015!'
+
 
 ## Chrome Driver 경로 지정
 driverPath = r"chromedriver.exe" 
@@ -38,18 +41,19 @@ time.sleep(1)
 driver.find_element("xpath","/html/body/div[1]/div[2]/div/div[1]/div[2]/form/fieldset/button/span/em").click()
 time.sleep(1)
 
-##테스트 페이지 이동(소녀시대)
-# driver.get('http://ticket.yes24.com/Special/43124')
-##테스트 페이지 이동(SM Town)
-driver.get('http://ticket.yes24.com/Special/42948')
+##페이지 이동(NCT 공연 url로 수정 필요)
+driver.get('http://ticket.yes24.com/Special/43124')
 time.sleep(1)
 
 target_mon = 8
-target_day = 16
-target_hour = 14
-target_min = 32
+target_day = 17
+target_hour = 19
+target_min = 59
 target_sec = 59
+
 progress = 0
+
+print(f'{target_mon}월 {target_day}일 {target_hour}시 {target_min}분 {target_sec}초에 예약을 시도합니다.')
 
 url = 'http://ticket.yes24.com'
 date = urllib.request.urlopen(url).headers['Date'][5:-4]
