@@ -42,7 +42,7 @@ driver.find_element("xpath","/html/body/div[1]/div[2]/div/div[1]/div[2]/form/fie
 time.sleep(1)
 
 ##페이지 이동(NCT 공연 url로 수정 필요)
-driver.get('http://ticket.yes24.com/Special/43124')
+driver.get('http://ticket.yes24.com/Special/43155')
 time.sleep(1)
 
 target_mon = 8
