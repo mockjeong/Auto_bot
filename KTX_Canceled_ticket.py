@@ -160,7 +160,7 @@ while progress==0:
     if button_type == "예약하기":
         try:
             driver.find_element("xpath",res_but).click()
-            driver.implicitly_wait(3)
+            time.sleep(10)
             tele_bot.sendMessage(chat_id = '5559539231', text=start+"에서 "+end+"로 " + year +"년 " + month + "월 " + day + "일 " + hours + "시 여정이 예매되었습니다.\n"+"KTX 예약화면을 확인하세요..!!")
             progress = 1
             print("예매를 성공했습니다.")
