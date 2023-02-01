@@ -17,10 +17,10 @@ telgm_token = '5523286949:AAH-dLh7miR9gU9aMrGUZHOOLiuRlWHm0q4'
 tele_bot = telegram.Bot(token = telgm_token)
 
 ##코레일 ID 정보 입력 (Membership 정보 입력 받을 경우)
-member_num = input('코레일멤버쉽 번호 입력 : ')
-password = input('비밀 번호 입력 : ')
+# member_num = input('코레일멤버쉽 번호 입력 : ')
+# password = input('비밀 번호 입력 : ')
 
-# ## 예매 정보 입력1
+# ## 예매 정보 입력
 # start = input('출발지 입력 : ')
 # end = input('도착지 입력 : ')
 # year = input('년도 입력 (Ex.2022): ')
@@ -34,23 +34,23 @@ password = input('비밀 번호 입력 : ')
 # travel_preset = input('여정 프리셋 : ')
 
 # 프리셋 사용 안할 경우
-travel_preset = 0
+travel_preset = '1'
 
 ## 내 아이디로 미리 설정
 ## 지향이 아이디
 # member_num = '1040132735'
 # password = 'wlgid!9286'
 # 정목 아이디
-# member_num = '0960000414'
-# password = 'dbwjdahr11!'
+member_num = '0960000414'
+password = 'dbwjdahr11!'
 
 if travel_preset == '1':
     start = '서울'
-    end = '강릉'
-    year = '2022'
-    month = '8'
-    day = '6'
-    hours = '10'
+    end = '양평'
+    year = '2023'
+    month = '2'
+    day = '3'
+    hours = '16'
 elif travel_preset == '2':
     start = '청량리'
     end = '강릉'
