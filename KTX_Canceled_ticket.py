@@ -46,9 +46,11 @@ travel_preset = '1'
 ## 지향이 아이디
 # member_num = '1040132735'
 # password = 'wlgid!9286'
+
 # 정목 아이디
 # member_num = '0960000414'
 # password = 'dbwjdahr11!'
+
 # 아빠 아이디
 member_num = '0740248171'
 password = 'ymj1212!'
@@ -57,16 +59,16 @@ if travel_preset == '1':
     start = '광명'
     end = '울산'
     year = '2023'
-    month = '7'
-    day = '24'
-    hours = '11'
+    month = '10'
+    day = '30'
+    hours = '11 (오전11)'
 elif travel_preset == '2':
-    start = '청량리'
-    end = '강릉'
-    year = '2022'
-    month = '8'
-    day = '6'
-    hours = '10'
+    start = '광명'
+    end = '울산'
+    year = '2023'
+    month = '10'
+    day = '30'
+    hours = '12 (오전12)'
 elif travel_preset == '3':
     start = '강릉'
     end = '서울'
@@ -117,14 +119,14 @@ driver.implicitly_wait(3)
 time.sleep(0.5)
 
 # < pop-up창 없애기 >
-time.sleep(3)
-driver.window_handles    # 창 개수 확인
-driver.window_handles[0] # 메인창
-driver.window_handles[1] # 첫 번째 팝업 창
-driver.switch_to.window(driver.window_handles[1]) # 첫 번째 팝업 창으로 제어권 옮기기
-driver.close()                                    # 첫 번째 팝업 창 닫기
-driver.switch_to.window(driver.window_handles[0]) # 홈 화면 으로 제어권 옮기기
-time.sleep(1)
+# time.sleep(3)
+# driver.window_handles    # 창 개수 확인
+# driver.window_handles[0] # 메인창
+# driver.window_handles[1] # 첫 번째 팝업 창
+# driver.switch_to.window(driver.window_handles[1]) # 첫 번째 팝업 창으로 제어권 옮기기
+# driver.close()                                    # 첫 번째 팝업 창 닫기
+# driver.switch_to.window(driver.window_handles[0]) # 홈 화면 으로 제어권 옮기기
+# time.sleep(1)
 
 #예약 화면 이동
 driver.get('http://www.letskorail.com/ebizprd/EbizPrdTicketpr21100W_pr21110.do')
@@ -152,12 +154,12 @@ refresh_but="/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[3]/p/a/img" ## 
 
 while progress==0:
     driver.implicitly_wait(1)
-    try:
-        alert = Alert(driver)
-        # Accept the alert box
-        alert.accept()
-    except Exception as e:
-        print(e)
+    # try:
+    #     alert = Alert(driver)
+    #     # Accept the alert box
+    #     alert.accept()
+    # except Exception as e:
+    #     print(e)
     try:
         #예약하기 or 입석+좌석 등.. 하이퍼링크가 살아있는경우
         # res_but = "/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[4]/table[1]/tbody/tr[1]/td[5]/a[1]/img"  #특실
